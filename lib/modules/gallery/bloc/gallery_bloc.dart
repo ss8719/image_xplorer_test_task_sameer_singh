@@ -14,7 +14,10 @@ class GalleryBloc extends Bloc<GalleryEvent, GalleryState> {
   List<dynamic> images = [];
 
   GalleryBloc() : super(const GalleryState.initial()) {
-    on<GalleryEvent>((event, emit) {});
+    on<GalleryEvent>((event, emit) async {
+      await _fetchImages();
+    });
+    add(const GalleryEvent.started());
   }
 
   Future<void> _fetchImages() async {
