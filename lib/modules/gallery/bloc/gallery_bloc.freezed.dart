@@ -301,6 +301,7 @@ mixin _$GalleryState {
     required TResult Function() initial,
     required TResult Function(GalleryCollectionModel galleryCollectionModel)
         galleryImageLoadedState,
+    required TResult Function() onTapBackButtonInFullScreenViewImageState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -308,6 +309,7 @@ mixin _$GalleryState {
     TResult? Function()? initial,
     TResult? Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
+    TResult? Function()? onTapBackButtonInFullScreenViewImageState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -315,6 +317,7 @@ mixin _$GalleryState {
     TResult Function()? initial,
     TResult Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
+    TResult Function()? onTapBackButtonInFullScreenViewImageState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -323,18 +326,24 @@ mixin _$GalleryState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_GalleryImageLoadedState value)
         galleryImageLoadedState,
+    required TResult Function(_OnTapBackButtonInFullScreenViewImageState value)
+        onTapBackButtonInFullScreenViewImageState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
+    TResult? Function(_OnTapBackButtonInFullScreenViewImageState value)?
+        onTapBackButtonInFullScreenViewImageState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
+    TResult Function(_OnTapBackButtonInFullScreenViewImageState value)?
+        onTapBackButtonInFullScreenViewImageState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -399,6 +408,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function(GalleryCollectionModel galleryCollectionModel)
         galleryImageLoadedState,
+    required TResult Function() onTapBackButtonInFullScreenViewImageState,
   }) {
     return initial();
   }
@@ -409,6 +419,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
+    TResult? Function()? onTapBackButtonInFullScreenViewImageState,
   }) {
     return initial?.call();
   }
@@ -419,6 +430,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
+    TResult Function()? onTapBackButtonInFullScreenViewImageState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -433,6 +445,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_GalleryImageLoadedState value)
         galleryImageLoadedState,
+    required TResult Function(_OnTapBackButtonInFullScreenViewImageState value)
+        onTapBackButtonInFullScreenViewImageState,
   }) {
     return initial(this);
   }
@@ -442,6 +456,8 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
+    TResult? Function(_OnTapBackButtonInFullScreenViewImageState value)?
+        onTapBackButtonInFullScreenViewImageState,
   }) {
     return initial?.call(this);
   }
@@ -451,6 +467,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
+    TResult Function(_OnTapBackButtonInFullScreenViewImageState value)?
+        onTapBackButtonInFullScreenViewImageState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -546,6 +564,7 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
     required TResult Function() initial,
     required TResult Function(GalleryCollectionModel galleryCollectionModel)
         galleryImageLoadedState,
+    required TResult Function() onTapBackButtonInFullScreenViewImageState,
   }) {
     return galleryImageLoadedState(galleryCollectionModel);
   }
@@ -556,6 +575,7 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
     TResult? Function()? initial,
     TResult? Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
+    TResult? Function()? onTapBackButtonInFullScreenViewImageState,
   }) {
     return galleryImageLoadedState?.call(galleryCollectionModel);
   }
@@ -566,6 +586,7 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
     TResult Function()? initial,
     TResult Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
+    TResult Function()? onTapBackButtonInFullScreenViewImageState,
     required TResult orElse(),
   }) {
     if (galleryImageLoadedState != null) {
@@ -580,6 +601,8 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_GalleryImageLoadedState value)
         galleryImageLoadedState,
+    required TResult Function(_OnTapBackButtonInFullScreenViewImageState value)
+        onTapBackButtonInFullScreenViewImageState,
   }) {
     return galleryImageLoadedState(this);
   }
@@ -589,6 +612,8 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
+    TResult? Function(_OnTapBackButtonInFullScreenViewImageState value)?
+        onTapBackButtonInFullScreenViewImageState,
   }) {
     return galleryImageLoadedState?.call(this);
   }
@@ -598,6 +623,8 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
+    TResult Function(_OnTapBackButtonInFullScreenViewImageState value)?
+        onTapBackButtonInFullScreenViewImageState,
     required TResult orElse(),
   }) {
     if (galleryImageLoadedState != null) {
@@ -616,4 +643,126 @@ abstract class _GalleryImageLoadedState implements GalleryState {
   @JsonKey(ignore: true)
   _$$GalleryImageLoadedStateImplCopyWith<_$GalleryImageLoadedStateImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$OnTapBackButtonInFullScreenViewImageStateImplCopyWith<$Res> {
+  factory _$$OnTapBackButtonInFullScreenViewImageStateImplCopyWith(
+          _$OnTapBackButtonInFullScreenViewImageStateImpl value,
+          $Res Function(_$OnTapBackButtonInFullScreenViewImageStateImpl) then) =
+      __$$OnTapBackButtonInFullScreenViewImageStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnTapBackButtonInFullScreenViewImageStateImplCopyWithImpl<$Res>
+    extends _$GalleryStateCopyWithImpl<$Res,
+        _$OnTapBackButtonInFullScreenViewImageStateImpl>
+    implements _$$OnTapBackButtonInFullScreenViewImageStateImplCopyWith<$Res> {
+  __$$OnTapBackButtonInFullScreenViewImageStateImplCopyWithImpl(
+      _$OnTapBackButtonInFullScreenViewImageStateImpl _value,
+      $Res Function(_$OnTapBackButtonInFullScreenViewImageStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnTapBackButtonInFullScreenViewImageStateImpl
+    implements _OnTapBackButtonInFullScreenViewImageState {
+  const _$OnTapBackButtonInFullScreenViewImageStateImpl();
+
+  @override
+  String toString() {
+    return 'GalleryState.onTapBackButtonInFullScreenViewImageState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnTapBackButtonInFullScreenViewImageStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(GalleryCollectionModel galleryCollectionModel)
+        galleryImageLoadedState,
+    required TResult Function() onTapBackButtonInFullScreenViewImageState,
+  }) {
+    return onTapBackButtonInFullScreenViewImageState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(GalleryCollectionModel galleryCollectionModel)?
+        galleryImageLoadedState,
+    TResult? Function()? onTapBackButtonInFullScreenViewImageState,
+  }) {
+    return onTapBackButtonInFullScreenViewImageState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(GalleryCollectionModel galleryCollectionModel)?
+        galleryImageLoadedState,
+    TResult Function()? onTapBackButtonInFullScreenViewImageState,
+    required TResult orElse(),
+  }) {
+    if (onTapBackButtonInFullScreenViewImageState != null) {
+      return onTapBackButtonInFullScreenViewImageState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GalleryImageLoadedState value)
+        galleryImageLoadedState,
+    required TResult Function(_OnTapBackButtonInFullScreenViewImageState value)
+        onTapBackButtonInFullScreenViewImageState,
+  }) {
+    return onTapBackButtonInFullScreenViewImageState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
+    TResult? Function(_OnTapBackButtonInFullScreenViewImageState value)?
+        onTapBackButtonInFullScreenViewImageState,
+  }) {
+    return onTapBackButtonInFullScreenViewImageState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
+    TResult Function(_OnTapBackButtonInFullScreenViewImageState value)?
+        onTapBackButtonInFullScreenViewImageState,
+    required TResult orElse(),
+  }) {
+    if (onTapBackButtonInFullScreenViewImageState != null) {
+      return onTapBackButtonInFullScreenViewImageState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnTapBackButtonInFullScreenViewImageState
+    implements GalleryState {
+  const factory _OnTapBackButtonInFullScreenViewImageState() =
+      _$OnTapBackButtonInFullScreenViewImageStateImpl;
 }

@@ -6,9 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:image_xplorer_test_task_sameer_singh/modules/gallery/models/gallery_collection_model.dart';
 
 part 'gallery_bloc.freezed.dart';
-
 part 'gallery_event.dart';
-
 part 'gallery_state.dart';
 
 class GalleryBloc extends Bloc<GalleryEvent, GalleryState> {
@@ -20,6 +18,9 @@ class GalleryBloc extends Bloc<GalleryEvent, GalleryState> {
             await _fetchImages();
             emit(GalleryState.galleryImageLoadedState(galleryCollectionModel: galleryCollectionModel!));
             return null;
+          },
+          onTapBackButtonInFullScreenViewImageEvent: (_OnTapBackButtonInFullScreenViewImageEvent value) {
+            emit(GalleryState.onTapBackButtonInFullScreenViewImageState());
           },
         ));
     add(const GalleryEvent.started());
