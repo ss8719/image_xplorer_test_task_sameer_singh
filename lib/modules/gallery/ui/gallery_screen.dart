@@ -83,14 +83,17 @@ class GalleryScreen extends StatelessWidget {
                                       imageUrl: image?.previewUrl ?? "",
                                     ),
                                     Positioned(
+                                      top: 20,
                                         child: IconButton(
                                             onPressed: () {
                                               bloc.add(const GalleryEvent.onTapBackButtonInFullScreenViewImageEvent());
                                             },
-                                            icon: Icon(
-                                              Icons.arrow_back_ios_outlined,
-                                              size: 30,
-                                              color: Theme.of(context).primaryColor,
+                                            icon: CircleAvatar(
+                                              child: Icon(
+                                                Icons.arrow_back_ios_outlined,
+                                                size: 30,
+                                                color: Theme.of(context).primaryColor,
+                                              ),
                                             ))),
                                     Positioned(
                                       bottom: 8.0,
