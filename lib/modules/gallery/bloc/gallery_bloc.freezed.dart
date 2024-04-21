@@ -301,7 +301,8 @@ mixin _$GalleryState {
     required TResult Function() initial,
     required TResult Function(GalleryCollectionModel galleryCollectionModel)
         galleryImageLoadedState,
-    required TResult Function() onTapBackButtonInFullScreenViewImageState,
+    required TResult Function(DateTime dateTime)
+        onTapBackButtonInFullScreenViewImageState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -309,7 +310,8 @@ mixin _$GalleryState {
     TResult? Function()? initial,
     TResult? Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
-    TResult? Function()? onTapBackButtonInFullScreenViewImageState,
+    TResult? Function(DateTime dateTime)?
+        onTapBackButtonInFullScreenViewImageState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -317,7 +319,8 @@ mixin _$GalleryState {
     TResult Function()? initial,
     TResult Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
-    TResult Function()? onTapBackButtonInFullScreenViewImageState,
+    TResult Function(DateTime dateTime)?
+        onTapBackButtonInFullScreenViewImageState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -408,7 +411,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function(GalleryCollectionModel galleryCollectionModel)
         galleryImageLoadedState,
-    required TResult Function() onTapBackButtonInFullScreenViewImageState,
+    required TResult Function(DateTime dateTime)
+        onTapBackButtonInFullScreenViewImageState,
   }) {
     return initial();
   }
@@ -419,7 +423,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
-    TResult? Function()? onTapBackButtonInFullScreenViewImageState,
+    TResult? Function(DateTime dateTime)?
+        onTapBackButtonInFullScreenViewImageState,
   }) {
     return initial?.call();
   }
@@ -430,7 +435,8 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
-    TResult Function()? onTapBackButtonInFullScreenViewImageState,
+    TResult Function(DateTime dateTime)?
+        onTapBackButtonInFullScreenViewImageState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -564,7 +570,8 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
     required TResult Function() initial,
     required TResult Function(GalleryCollectionModel galleryCollectionModel)
         galleryImageLoadedState,
-    required TResult Function() onTapBackButtonInFullScreenViewImageState,
+    required TResult Function(DateTime dateTime)
+        onTapBackButtonInFullScreenViewImageState,
   }) {
     return galleryImageLoadedState(galleryCollectionModel);
   }
@@ -575,7 +582,8 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
     TResult? Function()? initial,
     TResult? Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
-    TResult? Function()? onTapBackButtonInFullScreenViewImageState,
+    TResult? Function(DateTime dateTime)?
+        onTapBackButtonInFullScreenViewImageState,
   }) {
     return galleryImageLoadedState?.call(galleryCollectionModel);
   }
@@ -586,7 +594,8 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
     TResult Function()? initial,
     TResult Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
-    TResult Function()? onTapBackButtonInFullScreenViewImageState,
+    TResult Function(DateTime dateTime)?
+        onTapBackButtonInFullScreenViewImageState,
     required TResult orElse(),
   }) {
     if (galleryImageLoadedState != null) {
@@ -651,6 +660,8 @@ abstract class _$$OnTapBackButtonInFullScreenViewImageStateImplCopyWith<$Res> {
           _$OnTapBackButtonInFullScreenViewImageStateImpl value,
           $Res Function(_$OnTapBackButtonInFullScreenViewImageStateImpl) then) =
       __$$OnTapBackButtonInFullScreenViewImageStateImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({DateTime dateTime});
 }
 
 /// @nodoc
@@ -662,28 +673,57 @@ class __$$OnTapBackButtonInFullScreenViewImageStateImplCopyWithImpl<$Res>
       _$OnTapBackButtonInFullScreenViewImageStateImpl _value,
       $Res Function(_$OnTapBackButtonInFullScreenViewImageStateImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? dateTime = null,
+  }) {
+    return _then(_$OnTapBackButtonInFullScreenViewImageStateImpl(
+      dateTime: null == dateTime
+          ? _value.dateTime
+          : dateTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$OnTapBackButtonInFullScreenViewImageStateImpl
     implements _OnTapBackButtonInFullScreenViewImageState {
-  const _$OnTapBackButtonInFullScreenViewImageStateImpl();
+  const _$OnTapBackButtonInFullScreenViewImageStateImpl(
+      {required this.dateTime});
+
+  @override
+  final DateTime dateTime;
 
   @override
   String toString() {
-    return 'GalleryState.onTapBackButtonInFullScreenViewImageState()';
+    return 'GalleryState.onTapBackButtonInFullScreenViewImageState(dateTime: $dateTime)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnTapBackButtonInFullScreenViewImageStateImpl);
+            other is _$OnTapBackButtonInFullScreenViewImageStateImpl &&
+            (identical(other.dateTime, dateTime) ||
+                other.dateTime == dateTime));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, dateTime);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OnTapBackButtonInFullScreenViewImageStateImplCopyWith<
+          _$OnTapBackButtonInFullScreenViewImageStateImpl>
+      get copyWith =>
+          __$$OnTapBackButtonInFullScreenViewImageStateImplCopyWithImpl<
+                  _$OnTapBackButtonInFullScreenViewImageStateImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -691,9 +731,10 @@ class _$OnTapBackButtonInFullScreenViewImageStateImpl
     required TResult Function() initial,
     required TResult Function(GalleryCollectionModel galleryCollectionModel)
         galleryImageLoadedState,
-    required TResult Function() onTapBackButtonInFullScreenViewImageState,
+    required TResult Function(DateTime dateTime)
+        onTapBackButtonInFullScreenViewImageState,
   }) {
-    return onTapBackButtonInFullScreenViewImageState();
+    return onTapBackButtonInFullScreenViewImageState(dateTime);
   }
 
   @override
@@ -702,9 +743,10 @@ class _$OnTapBackButtonInFullScreenViewImageStateImpl
     TResult? Function()? initial,
     TResult? Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
-    TResult? Function()? onTapBackButtonInFullScreenViewImageState,
+    TResult? Function(DateTime dateTime)?
+        onTapBackButtonInFullScreenViewImageState,
   }) {
-    return onTapBackButtonInFullScreenViewImageState?.call();
+    return onTapBackButtonInFullScreenViewImageState?.call(dateTime);
   }
 
   @override
@@ -713,11 +755,12 @@ class _$OnTapBackButtonInFullScreenViewImageStateImpl
     TResult Function()? initial,
     TResult Function(GalleryCollectionModel galleryCollectionModel)?
         galleryImageLoadedState,
-    TResult Function()? onTapBackButtonInFullScreenViewImageState,
+    TResult Function(DateTime dateTime)?
+        onTapBackButtonInFullScreenViewImageState,
     required TResult orElse(),
   }) {
     if (onTapBackButtonInFullScreenViewImageState != null) {
-      return onTapBackButtonInFullScreenViewImageState();
+      return onTapBackButtonInFullScreenViewImageState(dateTime);
     }
     return orElse();
   }
@@ -763,6 +806,13 @@ class _$OnTapBackButtonInFullScreenViewImageStateImpl
 
 abstract class _OnTapBackButtonInFullScreenViewImageState
     implements GalleryState {
-  const factory _OnTapBackButtonInFullScreenViewImageState() =
+  const factory _OnTapBackButtonInFullScreenViewImageState(
+          {required final DateTime dateTime}) =
       _$OnTapBackButtonInFullScreenViewImageStateImpl;
+
+  DateTime get dateTime;
+  @JsonKey(ignore: true)
+  _$$OnTapBackButtonInFullScreenViewImageStateImplCopyWith<
+          _$OnTapBackButtonInFullScreenViewImageStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
