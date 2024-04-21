@@ -19,32 +19,41 @@ mixin _$GalleryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() onTapBackButtonInFullScreenViewImageEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? onTapBackButtonInFullScreenViewImageEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? onTapBackButtonInFullScreenViewImageEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_OnTapBackButtonInFullScreenViewImageEvent value)
+        onTapBackButtonInFullScreenViewImageEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_OnTapBackButtonInFullScreenViewImageEvent value)?
+        onTapBackButtonInFullScreenViewImageEvent,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_OnTapBackButtonInFullScreenViewImageEvent value)?
+        onTapBackButtonInFullScreenViewImageEvent,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +116,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function() onTapBackButtonInFullScreenViewImageEvent,
   }) {
     return started();
   }
@@ -115,6 +125,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
+    TResult? Function()? onTapBackButtonInFullScreenViewImageEvent,
   }) {
     return started?.call();
   }
@@ -123,6 +134,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function()? onTapBackButtonInFullScreenViewImageEvent,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -135,6 +147,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_OnTapBackButtonInFullScreenViewImageEvent value)
+        onTapBackButtonInFullScreenViewImageEvent,
   }) {
     return started(this);
   }
@@ -143,6 +157,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
+    TResult? Function(_OnTapBackButtonInFullScreenViewImageEvent value)?
+        onTapBackButtonInFullScreenViewImageEvent,
   }) {
     return started?.call(this);
   }
@@ -151,6 +167,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_OnTapBackButtonInFullScreenViewImageEvent value)?
+        onTapBackButtonInFullScreenViewImageEvent,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -162,6 +180,118 @@ class _$StartedImpl implements _Started {
 
 abstract class _Started implements GalleryEvent {
   const factory _Started() = _$StartedImpl;
+}
+
+/// @nodoc
+abstract class _$$OnTapBackButtonInFullScreenViewImageEventImplCopyWith<$Res> {
+  factory _$$OnTapBackButtonInFullScreenViewImageEventImplCopyWith(
+          _$OnTapBackButtonInFullScreenViewImageEventImpl value,
+          $Res Function(_$OnTapBackButtonInFullScreenViewImageEventImpl) then) =
+      __$$OnTapBackButtonInFullScreenViewImageEventImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OnTapBackButtonInFullScreenViewImageEventImplCopyWithImpl<$Res>
+    extends _$GalleryEventCopyWithImpl<$Res,
+        _$OnTapBackButtonInFullScreenViewImageEventImpl>
+    implements _$$OnTapBackButtonInFullScreenViewImageEventImplCopyWith<$Res> {
+  __$$OnTapBackButtonInFullScreenViewImageEventImplCopyWithImpl(
+      _$OnTapBackButtonInFullScreenViewImageEventImpl _value,
+      $Res Function(_$OnTapBackButtonInFullScreenViewImageEventImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OnTapBackButtonInFullScreenViewImageEventImpl
+    implements _OnTapBackButtonInFullScreenViewImageEvent {
+  const _$OnTapBackButtonInFullScreenViewImageEventImpl();
+
+  @override
+  String toString() {
+    return 'GalleryEvent.onTapBackButtonInFullScreenViewImageEvent()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OnTapBackButtonInFullScreenViewImageEventImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() onTapBackButtonInFullScreenViewImageEvent,
+  }) {
+    return onTapBackButtonInFullScreenViewImageEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? onTapBackButtonInFullScreenViewImageEvent,
+  }) {
+    return onTapBackButtonInFullScreenViewImageEvent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? onTapBackButtonInFullScreenViewImageEvent,
+    required TResult orElse(),
+  }) {
+    if (onTapBackButtonInFullScreenViewImageEvent != null) {
+      return onTapBackButtonInFullScreenViewImageEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_OnTapBackButtonInFullScreenViewImageEvent value)
+        onTapBackButtonInFullScreenViewImageEvent,
+  }) {
+    return onTapBackButtonInFullScreenViewImageEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_OnTapBackButtonInFullScreenViewImageEvent value)?
+        onTapBackButtonInFullScreenViewImageEvent,
+  }) {
+    return onTapBackButtonInFullScreenViewImageEvent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_OnTapBackButtonInFullScreenViewImageEvent value)?
+        onTapBackButtonInFullScreenViewImageEvent,
+    required TResult orElse(),
+  }) {
+    if (onTapBackButtonInFullScreenViewImageEvent != null) {
+      return onTapBackButtonInFullScreenViewImageEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnTapBackButtonInFullScreenViewImageEvent
+    implements GalleryEvent {
+  const factory _OnTapBackButtonInFullScreenViewImageEvent() =
+      _$OnTapBackButtonInFullScreenViewImageEventImpl;
 }
 
 /// @nodoc
