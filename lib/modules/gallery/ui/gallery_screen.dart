@@ -29,7 +29,7 @@ class GalleryScreen extends StatelessWidget {
             builder: (context, state) {
               return state.mapOrNull(
                     galleryImageLoadedState: (value) {
-                      GridView.builder(
+                      return GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: _calculateColumnCount(MediaQuery.of(context).size.width),
                           crossAxisSpacing: 4.0,
@@ -95,7 +95,7 @@ class GalleryScreen extends StatelessWidget {
                       );
                     },
                   ) ??
-                  Center(
+                  const Center(
                     child: CircularProgressIndicator(),
                   );
             },
