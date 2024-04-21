@@ -2,6 +2,7 @@ import 'package:animations/animations.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_xplorer_test_task_sameer_singh/modules/gallery/bloc/gallery_bloc.dart';
 
 class GalleryScreen extends StatelessWidget {
@@ -74,11 +75,15 @@ class GalleryScreen extends StatelessWidget {
                                     imageUrl: image['previewURL'],
                                   ),
                                   Positioned(
-                                      child: Icon(
-                                    Icons.arrow_back_ios_outlined,
-                                    size: 30,
-                                    color: Theme.of(context).primaryColor,
-                                  )),
+                                      child: IconButton(
+                                          onPressed: () {
+                                            context.pop();
+                                          },
+                                          icon: Icon(
+                                            Icons.arrow_back_ios_outlined,
+                                            size: 30,
+                                            color: Theme.of(context).primaryColor,
+                                          ))),
                                   Positioned(
                                     bottom: 8.0,
                                     left: 8.0,
