@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'dart:convert';
 
 part 'gallery_collection_model.freezed.dart';
 part 'gallery_collection_model.g.dart';
