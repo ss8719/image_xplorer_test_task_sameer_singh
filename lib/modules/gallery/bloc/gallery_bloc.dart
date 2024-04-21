@@ -20,7 +20,7 @@ class GalleryBloc extends Bloc<GalleryEvent, GalleryState> {
             return null;
           },
           onTapBackButtonInFullScreenViewImageEvent: (_OnTapBackButtonInFullScreenViewImageEvent value) {
-            emit(GalleryState.onTapBackButtonInFullScreenViewImageState());
+            emit(GalleryState.onTapBackButtonInFullScreenViewImageState(dateTime: DateTime.now()));
           },
         ));
     add(const GalleryEvent.started());
