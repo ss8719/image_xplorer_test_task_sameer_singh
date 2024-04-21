@@ -74,6 +74,12 @@ class GalleryScreen extends StatelessWidget {
                                     imageUrl: image['previewURL'],
                                   ),
                                   Positioned(
+                                      child: Icon(
+                                    Icons.arrow_back_ios_outlined,
+                                    size: 30,
+                                    color: Theme.of(context).primaryColor,
+                                  )),
+                                  Positioned(
                                     bottom: 8.0,
                                     left: 8.0,
                                     child: Row(
