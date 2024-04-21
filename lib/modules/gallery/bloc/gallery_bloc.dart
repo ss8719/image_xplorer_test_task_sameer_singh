@@ -5,18 +5,20 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:http/http.dart' as http;
 
 part 'gallery_bloc.freezed.dart';
-
 part 'gallery_event.dart';
-
 part 'gallery_state.dart';
 
 class GalleryBloc extends Bloc<GalleryEvent, GalleryState> {
   List<dynamic> images = [];
 
   GalleryBloc() : super(const GalleryState.initial()) {
-    on<GalleryEvent>((event, emit) async {
-      await _fetchImages();
-    });
+    on<GalleryEvent>((event, emit) => event.map(
+          started: (value) async {
+            await _fetchImages();
+            emit(GalleryState.galleryImageLoadedState(images: images));
+            return null;
+          },
+        ));
     add(const GalleryEvent.started());
   }
 
