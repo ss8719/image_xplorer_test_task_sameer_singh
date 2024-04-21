@@ -188,19 +188,20 @@ mixin _$GalleryState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Initial value) galleryImageLoadedState,
+    required TResult Function(_GalleryImageLoadedState value)
+        galleryImageLoadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Initial value)? galleryImageLoadedState,
+    TResult? Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Initial value)? galleryImageLoadedState,
+    TResult Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -294,7 +295,8 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Initial value) galleryImageLoadedState,
+    required TResult Function(_GalleryImageLoadedState value)
+        galleryImageLoadedState,
   }) {
     return initial(this);
   }
@@ -303,7 +305,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Initial value)? galleryImageLoadedState,
+    TResult? Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
   }) {
     return initial?.call(this);
   }
@@ -312,7 +314,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Initial value)? galleryImageLoadedState,
+    TResult Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -327,20 +329,22 @@ abstract class _Initial implements GalleryState {
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+abstract class _$$GalleryImageLoadedStateImplCopyWith<$Res> {
+  factory _$$GalleryImageLoadedStateImplCopyWith(
+          _$GalleryImageLoadedStateImpl value,
+          $Res Function(_$GalleryImageLoadedStateImpl) then) =
+      __$$GalleryImageLoadedStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<dynamic> images});
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$GalleryStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+class __$$GalleryImageLoadedStateImplCopyWithImpl<$Res>
+    extends _$GalleryStateCopyWithImpl<$Res, _$GalleryImageLoadedStateImpl>
+    implements _$$GalleryImageLoadedStateImplCopyWith<$Res> {
+  __$$GalleryImageLoadedStateImplCopyWithImpl(
+      _$GalleryImageLoadedStateImpl _value,
+      $Res Function(_$GalleryImageLoadedStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -348,7 +352,7 @@ class __$$InitialImplCopyWithImpl<$Res>
   $Res call({
     Object? images = null,
   }) {
-    return _then(_$InitialImpl(
+    return _then(_$GalleryImageLoadedStateImpl(
       images: null == images
           ? _value._images
           : images // ignore: cast_nullable_to_non_nullable
@@ -359,8 +363,9 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl({required final List<dynamic> images}) : _images = images;
+class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
+  const _$GalleryImageLoadedStateImpl({required final List<dynamic> images})
+      : _images = images;
 
   final List<dynamic> _images;
   @override
@@ -379,7 +384,7 @@ class _$InitialImpl implements _Initial {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InitialImpl &&
+            other is _$GalleryImageLoadedStateImpl &&
             const DeepCollectionEquality().equals(other._images, _images));
   }
 
@@ -390,8 +395,9 @@ class _$InitialImpl implements _Initial {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
-      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
+  _$$GalleryImageLoadedStateImplCopyWith<_$GalleryImageLoadedStateImpl>
+      get copyWith => __$$GalleryImageLoadedStateImplCopyWithImpl<
+          _$GalleryImageLoadedStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -428,7 +434,8 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Initial value) galleryImageLoadedState,
+    required TResult Function(_GalleryImageLoadedState value)
+        galleryImageLoadedState,
   }) {
     return galleryImageLoadedState(this);
   }
@@ -437,7 +444,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Initial value)? galleryImageLoadedState,
+    TResult? Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
   }) {
     return galleryImageLoadedState?.call(this);
   }
@@ -446,7 +453,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Initial value)? galleryImageLoadedState,
+    TResult Function(_GalleryImageLoadedState value)? galleryImageLoadedState,
     required TResult orElse(),
   }) {
     if (galleryImageLoadedState != null) {
@@ -456,11 +463,12 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements GalleryState {
-  const factory _Initial({required final List<dynamic> images}) = _$InitialImpl;
+abstract class _GalleryImageLoadedState implements GalleryState {
+  const factory _GalleryImageLoadedState(
+      {required final List<dynamic> images}) = _$GalleryImageLoadedStateImpl;
 
   List<dynamic> get images;
   @JsonKey(ignore: true)
-  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GalleryImageLoadedStateImplCopyWith<_$GalleryImageLoadedStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -19,80 +19,85 @@ class GalleryScreen extends StatelessWidget {
           ),
           body: BlocBuilder<GalleryBloc, GalleryState>(
             buildWhen: (previous, current) {
-              return current.mapOrNull(galleryImageLoadedState: (value) {
-                return true;
-              },) ?? false;
+              return current.mapOrNull(
+                    galleryImageLoadedState: (value) {
+                      return true;
+                    },
+                  ) ??
+                  false;
             },
             builder: (context, state) {
-              return state.mapOrNull(galleryImageLoadedState: (value) {
-                GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: _calculateColumnCount(MediaQuery
-                        .of(context)
-                        .size
-                        .width),
-                    crossAxisSpacing: 4.0,
-                    mainAxisSpacing: 4.0,
-                  ),
-                  itemCount: _images.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    final image = _images[index];
-                    return OpenContainer(
-                      closedBuilder: (context, action) {
-                        return Stack(
-                          children: [
-                            CachedNetworkImage(
-                              fit: BoxFit.cover,
-                              width: double.infinity,
-                              height: double.infinity,
-                              imageUrl: image['previewURL'],
-                            ),
-                            Positioned(
-                              bottom: 8.0,
-                              left: 8.0,
-                              child: Row(
+              return state.mapOrNull(
+                    galleryImageLoadedState: (value) {
+                      GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: _calculateColumnCount(MediaQuery.of(context).size.width),
+                          crossAxisSpacing: 4.0,
+                          mainAxisSpacing: 4.0,
+                        ),
+                        itemCount: value.images.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          final image = value.images[index];
+                          return OpenContainer(
+                            closedBuilder: (context, action) {
+                              return Stack(
                                 children: [
-                                  const Icon(Icons.favorite, color: Colors.red),
-                                  Text(image['likes'].toString()),
-                                  const SizedBox(width: 8.0),
-                                  const Icon(Icons.visibility, color: Colors.blue),
-                                  Text(image['views'].toString()),
+                                  CachedNetworkImage(
+                                    fit: BoxFit.cover,
+                                    width: double.infinity,
+                                    height: double.infinity,
+                                    imageUrl: image['previewURL'],
+                                  ),
+                                  Positioned(
+                                    bottom: 8.0,
+                                    left: 8.0,
+                                    child: Row(
+                                      children: [
+                                        const Icon(Icons.favorite, color: Colors.red),
+                                        Text(image['likes'].toString()),
+                                        const SizedBox(width: 8.0),
+                                        const Icon(Icons.visibility, color: Colors.blue),
+                                        Text(image['views'].toString()),
+                                      ],
+                                    ),
+                                  ),
                                 ],
-                              ),
-                            ),
-                          ],
-                        );
-                      },
-                      openBuilder: (context, action) {
-                        return Stack(
-                          children: [
-                            CachedNetworkImage(
-                              fit: BoxFit.cover,
-                              width: double.infinity,
-                              height: double.infinity,
-                              imageUrl: image['previewURL'],
-                            ),
-                            Positioned(
-                              bottom: 8.0,
-                              left: 8.0,
-                              child: Row(
+                              );
+                            },
+                            openBuilder: (context, action) {
+                              return Stack(
                                 children: [
-                                  const Icon(Icons.favorite, color: Colors.red),
-                                  Text(image['likes'].toString()),
-                                  const SizedBox(width: 8.0),
-                                  const Icon(Icons.visibility, color: Colors.blue),
-                                  Text(image['views'].toString()),
+                                  CachedNetworkImage(
+                                    fit: BoxFit.cover,
+                                    width: double.infinity,
+                                    height: double.infinity,
+                                    imageUrl: image['previewURL'],
+                                  ),
+                                  Positioned(
+                                    bottom: 8.0,
+                                    left: 8.0,
+                                    child: Row(
+                                      children: [
+                                        const Icon(Icons.favorite, color: Colors.red),
+                                        Text(image['likes'].toString()),
+                                        const SizedBox(width: 8.0),
+                                        const Icon(Icons.visibility, color: Colors.blue),
+                                        Text(image['views'].toString()),
+                                      ],
+                                    ),
+                                  ),
                                 ],
-                              ),
-                            ),
-                          ],
-                        );
-                      },
-                      transitionType: ContainerTransitionType.fade,
-                    );
-                  },
-                )
-              },) ?? Center(child: CircularProgressIndicator(),);
+                              );
+                            },
+                            transitionType: ContainerTransitionType.fade,
+                          );
+                        },
+                      );
+                    },
+                  ) ??
+                  Center(
+                    child: CircularProgressIndicator(),
+                  );
             },
           ),
         );
