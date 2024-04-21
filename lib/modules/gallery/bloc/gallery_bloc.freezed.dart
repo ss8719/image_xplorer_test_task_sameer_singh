@@ -169,19 +169,22 @@ mixin _$GalleryState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<dynamic> images) galleryImageLoadedState,
+    required TResult Function(GalleryCollectionModel galleryCollectionModel)
+        galleryImageLoadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<dynamic> images)? galleryImageLoadedState,
+    TResult? Function(GalleryCollectionModel galleryCollectionModel)?
+        galleryImageLoadedState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<dynamic> images)? galleryImageLoadedState,
+    TResult Function(GalleryCollectionModel galleryCollectionModel)?
+        galleryImageLoadedState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -264,7 +267,8 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<dynamic> images) galleryImageLoadedState,
+    required TResult Function(GalleryCollectionModel galleryCollectionModel)
+        galleryImageLoadedState,
   }) {
     return initial();
   }
@@ -273,7 +277,8 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<dynamic> images)? galleryImageLoadedState,
+    TResult? Function(GalleryCollectionModel galleryCollectionModel)?
+        galleryImageLoadedState,
   }) {
     return initial?.call();
   }
@@ -282,7 +287,8 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<dynamic> images)? galleryImageLoadedState,
+    TResult Function(GalleryCollectionModel galleryCollectionModel)?
+        galleryImageLoadedState,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -335,7 +341,9 @@ abstract class _$$GalleryImageLoadedStateImplCopyWith<$Res> {
           $Res Function(_$GalleryImageLoadedStateImpl) then) =
       __$$GalleryImageLoadedStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<dynamic> images});
+  $Res call({GalleryCollectionModel galleryCollectionModel});
+
+  $GalleryCollectionModelCopyWith<$Res> get galleryCollectionModel;
 }
 
 /// @nodoc
@@ -350,34 +358,37 @@ class __$$GalleryImageLoadedStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? images = null,
+    Object? galleryCollectionModel = null,
   }) {
     return _then(_$GalleryImageLoadedStateImpl(
-      images: null == images
-          ? _value._images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+      galleryCollectionModel: null == galleryCollectionModel
+          ? _value.galleryCollectionModel
+          : galleryCollectionModel // ignore: cast_nullable_to_non_nullable
+              as GalleryCollectionModel,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GalleryCollectionModelCopyWith<$Res> get galleryCollectionModel {
+    return $GalleryCollectionModelCopyWith<$Res>(_value.galleryCollectionModel,
+        (value) {
+      return _then(_value.copyWith(galleryCollectionModel: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
-  const _$GalleryImageLoadedStateImpl({required final List<dynamic> images})
-      : _images = images;
+  const _$GalleryImageLoadedStateImpl({required this.galleryCollectionModel});
 
-  final List<dynamic> _images;
   @override
-  List<dynamic> get images {
-    if (_images is EqualUnmodifiableListView) return _images;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_images);
-  }
+  final GalleryCollectionModel galleryCollectionModel;
 
   @override
   String toString() {
-    return 'GalleryState.galleryImageLoadedState(images: $images)';
+    return 'GalleryState.galleryImageLoadedState(galleryCollectionModel: $galleryCollectionModel)';
   }
 
   @override
@@ -385,12 +396,12 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GalleryImageLoadedStateImpl &&
-            const DeepCollectionEquality().equals(other._images, _images));
+            (identical(other.galleryCollectionModel, galleryCollectionModel) ||
+                other.galleryCollectionModel == galleryCollectionModel));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_images));
+  int get hashCode => Object.hash(runtimeType, galleryCollectionModel);
 
   @JsonKey(ignore: true)
   @override
@@ -403,29 +414,32 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(List<dynamic> images) galleryImageLoadedState,
+    required TResult Function(GalleryCollectionModel galleryCollectionModel)
+        galleryImageLoadedState,
   }) {
-    return galleryImageLoadedState(images);
+    return galleryImageLoadedState(galleryCollectionModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(List<dynamic> images)? galleryImageLoadedState,
+    TResult? Function(GalleryCollectionModel galleryCollectionModel)?
+        galleryImageLoadedState,
   }) {
-    return galleryImageLoadedState?.call(images);
+    return galleryImageLoadedState?.call(galleryCollectionModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(List<dynamic> images)? galleryImageLoadedState,
+    TResult Function(GalleryCollectionModel galleryCollectionModel)?
+        galleryImageLoadedState,
     required TResult orElse(),
   }) {
     if (galleryImageLoadedState != null) {
-      return galleryImageLoadedState(images);
+      return galleryImageLoadedState(galleryCollectionModel);
     }
     return orElse();
   }
@@ -465,9 +479,10 @@ class _$GalleryImageLoadedStateImpl implements _GalleryImageLoadedState {
 
 abstract class _GalleryImageLoadedState implements GalleryState {
   const factory _GalleryImageLoadedState(
-      {required final List<dynamic> images}) = _$GalleryImageLoadedStateImpl;
+          {required final GalleryCollectionModel galleryCollectionModel}) =
+      _$GalleryImageLoadedStateImpl;
 
-  List<dynamic> get images;
+  GalleryCollectionModel get galleryCollectionModel;
   @JsonKey(ignore: true)
   _$$GalleryImageLoadedStateImplCopyWith<_$GalleryImageLoadedStateImpl>
       get copyWith => throw _privateConstructorUsedError;

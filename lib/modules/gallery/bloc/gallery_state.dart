@@ -4,5 +4,5 @@ part of 'gallery_bloc.dart';
 class GalleryState with _$GalleryState {
   const factory GalleryState.initial() = _Initial;
 
-  const factory GalleryState.galleryImageLoadedState({required List<dynamic> images}) = _GalleryImageLoadedState;
+  const factory GalleryState.galleryImageLoadedState({required GalleryCollectionModel galleryCollectionModel}) = _GalleryImageLoadedState;
 }

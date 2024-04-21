@@ -36,9 +36,9 @@ class GalleryScreen extends StatelessWidget {
                           crossAxisSpacing: 4.0,
                           mainAxisSpacing: 4.0,
                         ),
-                        itemCount: value.images.length,
+                        itemCount: value.galleryCollectionModel.hits?.length,
                         itemBuilder: (BuildContext context, int index) {
-                          final image = value.images[index];
+                          final image = value.galleryCollectionModel.hits?[index];
                           return OpenContainer(
                             closedBuilder: (context, action) {
                               return Stack(
@@ -47,7 +47,7 @@ class GalleryScreen extends StatelessWidget {
                                     fit: BoxFit.cover,
                                     width: double.infinity,
                                     height: double.infinity,
-                                    imageUrl: image['previewURL'],
+                                    imageUrl: image?.previewUrl??"",
                                   ),
                                   Positioned(
                                     bottom: 8.0,
@@ -55,10 +55,10 @@ class GalleryScreen extends StatelessWidget {
                                     child: Row(
                                       children: [
                                         const Icon(Icons.favorite, color: Colors.red),
-                                        Text(image['likes'].toString()),
+                                        Text(image!.likes.toString()),
                                         const SizedBox(width: 8.0),
                                         const Icon(Icons.visibility, color: Colors.blue),
-                                        Text(image['views'].toString()),
+                                        Text(image.views.toString()),
                                       ],
                                     ),
                                   ),
@@ -72,7 +72,7 @@ class GalleryScreen extends StatelessWidget {
                                     fit: BoxFit.cover,
                                     width: double.infinity,
                                     height: double.infinity,
-                                    imageUrl: image['previewURL'],
+                                    imageUrl: image?.previewUrl??"",
                                   ),
                                   Positioned(
                                       child: IconButton(
@@ -90,10 +90,10 @@ class GalleryScreen extends StatelessWidget {
                                     child: Row(
                                       children: [
                                         const Icon(Icons.favorite, color: Colors.red),
-                                        Text(image['likes'].toString()),
+                                        Text(image!.likes.toString()),
                                         const SizedBox(width: 8.0),
                                         const Icon(Icons.visibility, color: Colors.blue),
-                                        Text(image['views'].toString()),
+                                        Text(image.views.toString()),
                                       ],
                                     ),
                                   ),
