@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:image_xplorer_test_task_sameer_singh/modules/home/ui/gallery_screen.dart';
+import 'package:image_xplorer_test_task_sameer_singh/modules/gallery/ui/gallery_screen.dart';
 
 part 'routes_config.g.dart';
 
