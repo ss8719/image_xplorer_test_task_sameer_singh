@@ -48,11 +48,6 @@ class _GalleryPageState extends State<GalleryPage> {
     }
   }
 
-  void _openFullScreenImage(String imageUrl) {
-    // Implement full-screen image view with animation
-    // You can use packages like photo_view for this purpose
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
