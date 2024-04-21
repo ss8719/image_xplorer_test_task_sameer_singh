@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:animations/animations.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -36,7 +38,7 @@ class _GalleryPageState extends State<GalleryPage> {
 
   Future<void> _fetchImages() async {
     final response =
-    await http.get(Uri.parse("https://pixabay.com/api/?key=43406626-fd16c5e6935d2534aa3473c0f&image_type=photo"));
+        await http.get(Uri.parse("https://pixabay.com/api/?key=43406626-fd16c5e6935d2534aa3473c0f&image_type=photo"));
     if (response.statusCode == 200) {
       setState(() {
         _images = json.decode(response.body)['hits'];
@@ -55,7 +57,7 @@ class _GalleryPageState extends State<GalleryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Gallery'),
+        title: const Text('Flutter Gallery'),
       ),
       body: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -66,31 +68,58 @@ class _GalleryPageState extends State<GalleryPage> {
         itemCount: _images.length,
         itemBuilder: (BuildContext context, int index) {
           final image = _images[index];
-          return GestureDetector(
-            onTap: () => _openFullScreenImage(image['largeImageURL']),
-            child: Stack(
-              children: [
-                Image.network(
-                  image['previewURL'],
-                  fit: BoxFit.cover,
-                  width: double.infinity,
-                  height: double.infinity,
-                ),
-                Positioned(
-                  bottom: 8.0,
-                  left: 8.0,
-                  child: Row(
-                    children: [
-                      Icon(Icons.favorite, color: Colors.red),
-                      Text(image['likes'].toString()),
-                      SizedBox(width: 8.0),
-                      Icon(Icons.visibility, color: Colors.blue),
-                      Text(image['views'].toString()),
-                    ],
+          return OpenContainer(
+            closedBuilder: (context, action) {
+              return Stack(
+                children: [
+                  CachedNetworkImage(
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                    height: double.infinity,
+                    imageUrl: image['previewURL'],
                   ),
-                ),
-              ],
-            ),
+                  Positioned(
+                    bottom: 8.0,
+                    left: 8.0,
+                    child: Row(
+                      children: [
+                        const Icon(Icons.favorite, color: Colors.red),
+                        Text(image['likes'].toString()),
+                        const SizedBox(width: 8.0),
+                        const Icon(Icons.visibility, color: Colors.blue),
+                        Text(image['views'].toString()),
+                      ],
+                    ),
+                  ),
+                ],
+              );
+            },
+            openBuilder: (context, action) {
+              return Stack(
+                children: [
+                  CachedNetworkImage(
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                    height: double.infinity,
+                    imageUrl: image['previewURL'],
+                  ),
+                  Positioned(
+                    bottom: 8.0,
+                    left: 8.0,
+                    child: Row(
+                      children: [
+                        const Icon(Icons.favorite, color: Colors.red),
+                        Text(image['likes'].toString()),
+                        const SizedBox(width: 8.0),
+                        const Icon(Icons.visibility, color: Colors.blue),
+                        Text(image['views'].toString()),
+                      ],
+                    ),
+                  ),
+                ],
+              );
+            },
+            transitionType: ContainerTransitionType.fade,
           );
         },
       ),
