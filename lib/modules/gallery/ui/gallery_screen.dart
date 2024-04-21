@@ -24,7 +24,7 @@ class GalleryScreen extends StatelessWidget {
           },
           child: Scaffold(
             appBar: AppBar(
-              title: const Text('Flutter Gallery'),
+              title: const Text('Gallery'),
             ),
             body: BlocBuilder<GalleryBloc, GalleryState>(
               buildWhen: (previous, current) {
