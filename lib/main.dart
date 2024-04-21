@@ -127,6 +127,6 @@ class _GalleryPageState extends State<GalleryPage> {
   }
 
   int _calculateColumnCount(double screenWidth) {
-    return (screenWidth / 200).round(); // Adjust 150 as needed
+    return (screenWidth / 200).round();
   }
 }
